@@ -47,8 +47,8 @@ object $name__Camel$Build extends Build {
       commonSettings ++
         scalaJSBuildSettings ++
         Seq(
-          libraryDependencies += "org.scala-lang.modules.scalajs" %%% "scalajs-dom" % "$scalajs-dom_version$",
-          libraryDependencies += "org.scala-lang.modules.scalajs" %%% "scalajs-jquery" % "$scalajs-jquery_version$",
+          libraryDependencies += "org.scala-lang.modules.scalajs" %%% "scalajs-dom" % "$scalajs_dom_version$",
+          libraryDependencies += "org.scala-lang.modules.scalajs" %%% "scalajs-jquery" % "$scalajs_jquery_version$",
           libraryDependencies += "net.entelijan" %%% "doctus-scalajs" % D.doctusVersion)
 
   }
