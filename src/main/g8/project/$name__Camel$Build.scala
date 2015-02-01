@@ -9,15 +9,15 @@ import scala.scalajs.sbtplugin._
 import ScalaJSPlugin._
 import ScalaJSKeys._
 
-object MydoctusBuild extends Build {
+object $name__Camel$Build extends Build {
 
   // Constant values
   object D {
 
-    val version = "1.0-SNAPSHOT"
+    val version = "$version$"
 
-    val scalaVersion = "2.11.4"
-    val doctusVersion = "1.0.3-SNAPSHOT"
+    val scalaVersion = "$scala_version$"
+    val doctusVersion = "$doctus_version$"
 
   }
 
@@ -28,15 +28,14 @@ object MydoctusBuild extends Build {
         Seq(
           version := D.version,
           scalaVersion := D.scalaVersion,
-          organization := "myorg",
+          organization := "$organization$",
           libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.1" % "test")
 
     lazy val coreSettings =
       commonSettings ++
         scalaJSBuildSettings ++
         Seq(
-          libraryDependencies += "net.entelijan" %%% "doctus-core" % D.doctusVersion,
-          libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.2")
+          libraryDependencies += "net.entelijan" %%% "doctus-core" % D.doctusVersion)
 
     lazy val swingSettings =
       commonSettings ++
@@ -48,31 +47,31 @@ object MydoctusBuild extends Build {
       commonSettings ++
         scalaJSBuildSettings ++
         Seq(
-          libraryDependencies += "org.scala-lang.modules.scalajs" %%% "scalajs-dom" % "0.6",
-          libraryDependencies += "org.scala-lang.modules.scalajs" %%% "scalajs-jquery" % "0.6",
+          libraryDependencies += "org.scala-lang.modules.scalajs" %%% "scalajs-dom" % "$scalajs-dom_version$",
+          libraryDependencies += "org.scala-lang.modules.scalajs" %%% "scalajs-jquery" % "$scalajs-jquery_version$",
           libraryDependencies += "net.entelijan" %%% "doctus-scalajs" % D.doctusVersion)
 
   }
 
   // Project definitions
-  lazy val root = Project(id = "mydoctus-root",
+  lazy val root = Project(id = "$name__camel$-root",
     base = file("."), //
     settings = S.commonSettings).aggregate(core, swing, scalajs)
 
   lazy val core = Project(
-    id = "mydoctus-core",
-    base = file("mydoctus-core"), // 
+    id = "$name__camel$-core",
+    base = file("$name__camel$-core"), // 
     settings = S.coreSettings)
 
   lazy val swing = Project(
-    id = "mydoctus-swing",
-    base = file("mydoctus-swing"),
+    id = "$name__camel$-swing",
+    base = file("$name__camel$-swing"),
     settings = S.swingSettings //
     ).dependsOn(core)
 
   lazy val scalajs = Project(
-    id = "mydoctus-scalajs",
-    base = file("mydoctus-scalajs"),
+    id = "$name__camel$-scalajs",
+    base = file("$name__camel$-scalajs"),
     settings = S.scalajsSettings //
     ).dependsOn(core)
 

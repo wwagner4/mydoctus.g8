@@ -1,4 +1,4 @@
-package myorg
+package $organization$
 
 import org.scalatest.FunSuite
 

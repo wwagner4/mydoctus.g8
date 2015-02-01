@@ -1,4 +1,4 @@
-package myorg
+package $organization$
 
 import java.awt.Dimension
 import doctus.swing.DoctusActivatableSwing
@@ -17,7 +17,7 @@ import doctus.swing.DoctusClickableSwing
 import java.awt.FlowLayout
 import doctus.swing.DoctusComponentFactory
 
-object MydoctusSwing extends App {
+object $name__Camel$Swing extends App {
 
   val top = new JFrame()
   val panel = DoctusComponentFactory.component
@@ -30,7 +30,7 @@ object MydoctusSwing extends App {
   cp.add(panel, BorderLayout.CENTER)
 
   top.setContentPane(cp)
-  top.setTitle("mydoctus")
+  top.setTitle("$name__Camel$")
   top.setSize(new Dimension(900, 700))
   top.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)
   top.setVisible(true)
