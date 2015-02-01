@@ -54,24 +54,24 @@ object $name;format="Camel"$Build extends Build {
   }
 
   // Project definitions
-  lazy val root = Project(id = "$name__camel$-root",
+  lazy val root = Project(id = "$name;format="camel"$-root",
     base = file("."), //
     settings = S.commonSettings).aggregate(core, swing, scalajs)
 
   lazy val core = Project(
-    id = "$name__camel$-core",
-    base = file("$name__camel$-core"), // 
+    id = "$name;format="camel"$-core",
+    base = file("$name;format="camel"$-core"), // 
     settings = S.coreSettings)
 
   lazy val swing = Project(
-    id = "$name__camel$-swing",
-    base = file("$name__camel$-swing"),
+    id = "$name;format="camel"$-swing",
+    base = file("$name;format="camel"$-swing"),
     settings = S.swingSettings //
     ).dependsOn(core)
 
   lazy val scalajs = Project(
-    id = "$name__camel$-scalajs",
-    base = file("$name__camel$-scalajs"),
+    id = "$name;format="camel"$-scalajs",
+    base = file("$name;format="camel"$-scalajs"),
     settings = S.scalajsSettings //
     ).dependsOn(core)
 

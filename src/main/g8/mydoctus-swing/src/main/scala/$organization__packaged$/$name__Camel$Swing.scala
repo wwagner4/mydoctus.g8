@@ -30,7 +30,7 @@ object $name;format="Camel"$Swing extends App {
   cp.add(panel, BorderLayout.CENTER)
 
   top.setContentPane(cp)
-  top.setTitle("$name__Camel$")
+  top.setTitle("$name;format="Camel"$")
   top.setSize(new Dimension(900, 700))
   top.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)
   top.setVisible(true)
