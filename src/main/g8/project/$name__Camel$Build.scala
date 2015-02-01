@@ -16,7 +16,7 @@ object $name;format="Camel"$Build extends Build {
 
     val version = "$version$"
 
-    val scalaVersion = "$scala_version$"
+    val scalaVersion = "$scala_version_major$.$scala_version_minor$"
     val doctusVersion = "$doctus_version$"
 
   }
