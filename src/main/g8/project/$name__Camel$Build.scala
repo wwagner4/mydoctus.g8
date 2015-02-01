@@ -9,7 +9,7 @@ import scala.scalajs.sbtplugin._
 import ScalaJSPlugin._
 import ScalaJSKeys._
 
-object $name__Camel$Build extends Build {
+object $name;format="Camel"$Build extends Build {
 
   // Constant values
   object D {

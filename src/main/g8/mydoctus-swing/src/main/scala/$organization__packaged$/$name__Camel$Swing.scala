@@ -17,7 +17,7 @@ import doctus.swing.DoctusClickableSwing
 import java.awt.FlowLayout
 import doctus.swing.DoctusComponentFactory
 
-object $name__Camel$Swing extends App {
+object $name;format="Camel"$Swing extends App {
 
   val top = new JFrame()
   val panel = DoctusComponentFactory.component

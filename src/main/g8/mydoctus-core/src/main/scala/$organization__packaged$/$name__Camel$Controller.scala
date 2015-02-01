@@ -1,4 +1,4 @@
-package $name__Camel$
+package $organization$
 
 import doctus.core._
 import doctus.core.color._

@@ -6,8 +6,8 @@ import org.scalajs.dom.HTMLCanvasElement
 import doctus.scalajs.DoctusCanvasScalajs
 import doctus.scalajs.DoctusSchedulerScalajs
 
-@JSExport("$name__Camel$ScalaJs")
-object $name__Camel$ScalaJs {
+@JSExport("$name;format="Camel"$ScalaJs")
+object $name;format="Camel"$ScalaJs {
 
   @JSExport
   def main() {
