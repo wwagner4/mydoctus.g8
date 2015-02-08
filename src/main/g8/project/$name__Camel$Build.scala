@@ -2,8 +2,6 @@ import sbt._
 import Keys._
 import sbt.Package.ManifestAttributes
 import com.typesafe.sbteclipse.plugin.EclipsePlugin._
-import com.typesafe.sbteclipse.core.Validation
-import com.typesafe.sbteclipse.plugin.EclipsePlugin.EclipseTransformerFactory
 
 import scala.scalajs.sbtplugin._
 import ScalaJSPlugin._
@@ -29,7 +27,9 @@ object $name;format="Camel"$Build extends Build {
           version := D.version,
           scalaVersion := D.scalaVersion,
           organization := "$organization$",
-          libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.1" % "test")
+          libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.1" % "test",
+          resolvers += "entelijan" at "http://entelijan.net/artifactory/repo",
+          EclipseKeys.withSource := true)
 
     lazy val coreSettings =
       commonSettings ++
