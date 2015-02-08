@@ -9,17 +9,16 @@
 		</style>
 	</head>
 	<body>
-		<canvas id="canvas" width="900" height="600" style="background-color: gray; ">HTML5 canvas not supported in your browser :-(</canvas>
-		<p>$name;format="Camel"$ using <a href="https://github.com/wwagner4/doctus">doctus</a></p>
-		
+		<canvas id="canvas" style="background-color: #EEEEEE; ">HTML5 canvas not supported in your browser :-(</canvas>
+		<p>$name;format="Camel"$ using <a href="http://entelijan.net/art/doctus">doctus</a></p>
 		<script  type="text/javascript" >
-				function resize() {
+	            function resize() {
 					var canv = document.getElementById("canvas") 
-					canv.width = window.innerWidth - 20;
-					canv.height = window.innerHeight - 60;
-				}
-				resize();
-				window.onresize = function() {resize();};	
+	                canv.width = window.innerWidth - 20;
+	                canv.height = window.innerHeight - 60;
+	            }
+	            resize();
+	            window.onresize = function() {resize();};	
 		</script>
 		<script type="text/javascript" src="target/scala-$scala_version_major$/$name;format="camel"$-scalajs-fastopt.js"></script>
 		<!-- 
