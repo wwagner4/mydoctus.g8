@@ -3,9 +3,8 @@ import Keys._
 import sbt.Package.ManifestAttributes
 import com.typesafe.sbteclipse.plugin.EclipsePlugin._
 
-import scala.scalajs.sbtplugin._
-import ScalaJSPlugin._
-import ScalaJSKeys._
+import org.scalajs.sbtplugin.ScalaJSPlugin
+import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
 
 object $name;format="Camel"$Build extends Build {
 
@@ -15,7 +14,7 @@ object $name;format="Camel"$Build extends Build {
     val version = "$version$"
 
     val scalaVersion = "$scala_version_major$.$scala_version_minor$"
-    val doctusVersion = "$doctus_version$"
+    val doctusVersion = "1.0.4-SNAPSHOT"
 
   }
 
@@ -33,7 +32,6 @@ object $name;format="Camel"$Build extends Build {
 
     lazy val coreSettings =
       commonSettings ++
-        scalaJSBuildSettings ++
         Seq(
           libraryDependencies += "net.entelijan" %%% "doctus-core" % D.doctusVersion)
 
@@ -45,10 +43,10 @@ object $name;format="Camel"$Build extends Build {
 
     lazy val scalajsSettings =
       commonSettings ++
-        scalaJSBuildSettings ++
         Seq(
-          libraryDependencies += "org.scala-lang.modules.scalajs" %%% "scalajs-dom" % "$scalajs_dom_version$",
-          libraryDependencies += "org.scala-lang.modules.scalajs" %%% "scalajs-jquery" % "$scalajs_jquery_version$",
+          jsDependencies += RuntimeDOM,
+          libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "0.8.0",
+          libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % "0.8.0",
           libraryDependencies += "net.entelijan" %%% "doctus-scalajs" % D.doctusVersion)
 
   }
@@ -60,20 +58,22 @@ object $name;format="Camel"$Build extends Build {
 
   lazy val core = Project(
     id = "$name;format="camel"$-core",
-    base = file("$name;format="camel"$-core"), // 
+    base = file("$name;format="camel"$-core"),
     settings = S.coreSettings)
+    .enablePlugins(ScalaJSPlugin)
 
   lazy val swing = Project(
     id = "$name;format="camel"$-swing",
     base = file("$name;format="camel"$-swing"),
-    settings = S.swingSettings //
-    ).dependsOn(core)
+    settings = S.swingSettings)
+	.dependsOn(core)
 
   lazy val scalajs = Project(
     id = "$name;format="camel"$-scalajs",
     base = file("$name;format="camel"$-scalajs"),
-    settings = S.scalajsSettings //
-    ).dependsOn(core)
+    settings = S.scalajsSettings)
+	.dependsOn(core)
+    .enablePlugins(ScalaJSPlugin)
 
 }
 
