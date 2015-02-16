@@ -2,7 +2,7 @@ package $organization$
 
 import scala.scalajs.js.annotation.JSExport
 import org.scalajs.dom
-import org.scalajs.dom.HTMLCanvasElement
+import org.scalajs.dom.raw.HTMLCanvasElement
 import doctus.scalajs.DoctusCanvasScalajs
 import doctus.scalajs.DoctusSchedulerScalajs
 

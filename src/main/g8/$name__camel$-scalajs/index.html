@@ -4,10 +4,16 @@
 		<meta charset="UTF-8">
 		<title>$name;format="Camel"$</title>
 		<style type="text/css">
-		body  {
-			font-family: monospace;
-			font-size: 16px;
-		}
+body  {
+	font-family: monospace;
+	font-size: 16px;
+	margin: 0px;
+	overflow: hidden;
+}
+p {
+	margin: 0px;
+	padding: 3px;
+}
 		</style>
 	</head>
 	<body>
@@ -16,8 +22,8 @@
 		<script  type="text/javascript" >
 	            function resize() {
 					var canv = document.getElementById("canvas") 
-	                canv.width = window.innerWidth - 20;
-	                canv.height = window.innerHeight - 60;
+	                canv.width = window.innerWidth;
+	                canv.height = window.innerHeight - 30;
 	            }
 	            resize();
 	            window.onresize = function() {resize();};	
