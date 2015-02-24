@@ -1,6 +1,7 @@
 package $organization$
 
 import doctus.core._
+import doctus.core.util._
 import doctus.core.color._
 
 case class WordPos(word: String, x: Double, y: Double, size: Double)
@@ -37,13 +38,13 @@ case class Controller(canvas: DoctusCanvas, sched: DoctusScheduler) {
     val h = canvas.height
 
     def drawBackground(g: DoctusGraphics): Unit = {
-      g.setColor(DoctusColorBlack, 30)
-      g.fillRect(0, 0, w, h)
+      g.fill(DoctusColorBlack, 30)
+      g.rect(DoctusPoint(0, 0), w, h)
     }
 
     def drawWord(wp: WordPos): Unit = {
-      g.setFontSize(wp.size)
-      g.drawString(wp.word, wp.x, wp.y)
+      g.textSize(wp.size)
+      g.text(wp.word, DoctusPoint(wp.x, wp.y), 0)
     }
 
     def next(l: WordPos): WordPos = {
@@ -60,7 +61,7 @@ case class Controller(canvas: DoctusCanvas, sched: DoctusScheduler) {
     }
 
     drawBackground(g)
-    g.setColor(DoctusColorWhite)
+    g.fill(DoctusColorWhite, 255)
     words = words.map(next)
     words.foreach(drawWord)
   }
