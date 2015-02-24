@@ -33,13 +33,16 @@ object $name;format="Camel"$Build extends Build {
     lazy val coreSettings =
       commonSettings ++
         Seq(
-          libraryDependencies += "net.entelijan" %%% "doctus-core" % D.doctusVersion)
+          libraryDependencies += "net.entelijan" %%% "doctus-core" % D.doctusVersion,
+          libraryDependencies += "com.lihaoyi" %%% "utest" % "0.3.0" % "test",
+          testFrameworks += new TestFramework("utest.runner.Framework"))
 
     lazy val swingSettings =
       commonSettings ++
         Seq(
           fork := true,
-          libraryDependencies += "net.entelijan" %% "doctus-swing" % D.doctusVersion)
+          libraryDependencies += "net.entelijan" %% "doctus-swing" % D.doctusVersion,
+          libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.1" % "test")
 
     lazy val scalajsSettings =
       commonSettings ++
@@ -47,14 +50,19 @@ object $name;format="Camel"$Build extends Build {
           jsDependencies += RuntimeDOM,
           libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "0.8.0",
           libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % "0.8.0",
-          libraryDependencies += "net.entelijan" %%% "doctus-scalajs" % D.doctusVersion)
+          libraryDependencies += "org.scala-js" %% "scalajs-library" % "0.6.0", 
+          libraryDependencies += "com.lihaoyi" %%% "utest" % "0.3.0" % "test",
+          libraryDependencies += "net.entelijan" %%% "doctus-scalajs" % D.doctusVersion,
+          testFrameworks += new TestFramework("utest.runner.Framework"))
 
   }
 
   // Project definitions
-  lazy val root = Project(id = "$name;format="camel"$-root",
-    base = file("."), //
-    settings = S.commonSettings).aggregate(core, swing, scalajs)
+  lazy val root = Project(
+    id = "$name;format="camel"$-root",
+    base = file("."), 
+    settings = S.commonSettings)
+    .aggregate(core, swing, scalajs)
 
   lazy val core = Project(
     id = "$name;format="camel"$-core",
@@ -66,13 +74,13 @@ object $name;format="Camel"$Build extends Build {
     id = "$name;format="camel"$-swing",
     base = file("$name;format="camel"$-swing"),
     settings = S.swingSettings)
-	.dependsOn(core)
+	  .dependsOn(core)
 
   lazy val scalajs = Project(
     id = "$name;format="camel"$-scalajs",
     base = file("$name;format="camel"$-scalajs"),
     settings = S.scalajsSettings)
-	.dependsOn(core)
+	  .dependsOn(core)
     .enablePlugins(ScalaJSPlugin)
 
 }
