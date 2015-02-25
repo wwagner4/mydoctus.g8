@@ -1,7 +1,5 @@
 package $organization$
 
-import org.scalatest.FunSuite
-
 import utest._
 
 /**
