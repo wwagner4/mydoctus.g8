@@ -15,8 +15,9 @@ object $name;format="Camel"$ScalaJs {
 
     val canvas = DoctusCanvasScalajs(canvasElem)
     val sched = DoctusSchedulerScalajs
+    val pointable = DoctusPointableScalajs(canvasElem)
 
-    $organization$.Controller(canvas, sched)
+    $organization$.Controller(canvas, sched, pointable)
   }
 
 }

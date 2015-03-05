@@ -9,7 +9,7 @@ case class WordPos(word: String, x: Double, y: Double, size: Double)
 /**
  * In here comes the complete logic for your project
  */
-case class Controller(canvas: DoctusCanvas, sched: DoctusScheduler) {
+case class Controller(canvas: DoctusCanvas, sched: DoctusScheduler, pointable: DoctusPointable) {
 
   val ran = new java.util.Random
   var words = {

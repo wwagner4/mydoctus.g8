@@ -14,6 +14,7 @@ object $name;format="Camel"$Swing extends App {
 
   val canvas = DoctusCanvasSwing(panel)
   val sched = DoctusSchedulerSwing
+  val pointable = DoctusPointableSwing(panel)
 
   val cp = new JPanel
   cp.setLayout(new BorderLayout)
@@ -25,7 +26,7 @@ object $name;format="Camel"$Swing extends App {
   top.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)
   top.setVisible(true)
 
-  Controller(canvas, sched)
+  Controller(canvas, sched, pointable)
 
 }
 
