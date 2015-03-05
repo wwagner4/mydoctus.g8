@@ -3,8 +3,7 @@ package $organization$
 import scala.scalajs.js.annotation.JSExport
 import org.scalajs.dom
 import org.scalajs.dom.raw.HTMLCanvasElement
-import doctus.scalajs.DoctusCanvasScalajs
-import doctus.scalajs.DoctusSchedulerScalajs
+import doctus.scalajs._
 
 @JSExport("$name;format="Camel"$ScalaJs")
 object $name;format="Camel"$ScalaJs {
