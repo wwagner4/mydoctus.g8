@@ -1,21 +1,11 @@
 package $organization$
 
+import java.awt.BorderLayout
 import java.awt.Dimension
-import doctus.swing.DoctusActivatableSwing
-import doctus.swing.DoctusCanvasSwing
-import doctus.swing.DoctusSchedulerSwing
 import javax.swing.JFrame
 import javax.swing.JPanel
-import java.awt.BorderLayout
-import doctus.core.DoctusClickable
-import java.util.Date
-import java.text.SimpleDateFormat
-import java.io.File
-import java.io.PrintWriter
-import javax.swing.JButton
-import doctus.swing.DoctusClickableSwing
-import java.awt.FlowLayout
-import doctus.swing.DoctusComponentFactory
+
+import doctus.swing._
 
 object $name;format="Camel"$Swing extends App {
 
@@ -24,6 +14,7 @@ object $name;format="Camel"$Swing extends App {
 
   val canvas = DoctusCanvasSwing(panel)
   val sched = DoctusSchedulerSwing
+  val pointable = DoctusPointableSwing(panel)
 
   val cp = new JPanel
   cp.setLayout(new BorderLayout)
@@ -35,7 +26,7 @@ object $name;format="Camel"$Swing extends App {
   top.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)
   top.setVisible(true)
 
-  Controller(canvas, sched)
+  Controller(canvas, sched, pointable)
 
 }
 

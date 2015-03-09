@@ -1,13 +1,17 @@
-package $organization$
+package net.entelijan
 
-import org.scalatest.FunSuite
+import utest._
 
 /**
- * In here come your tests for the swing module
+ * In here come your tests for the core module
  */
-class SwingSuite extends FunSuite {
+object SwingSuite extends TestSuite {
 
-  test("swing test") {
+  def tests = TestSuite {
+
+    'core_test {
+      assert(true)
+    }
   }
 
 }

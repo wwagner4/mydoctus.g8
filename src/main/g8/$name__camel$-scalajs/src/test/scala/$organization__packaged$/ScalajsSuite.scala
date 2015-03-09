@@ -3,9 +3,9 @@ package $organization$
 import utest._
 
 /**
- * In here come your tests for the core module
+ * In here come your tests for the scalajs module
  */
-object CoreSuite extends TestSuite {
+object ScalajsSuite extends TestSuite {
 
   def tests = TestSuite {
 
