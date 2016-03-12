@@ -27,7 +27,7 @@ object $name;format="Camel"$Swing extends App {
 
   // Common to all platforms
   val templ = $name;format="Camel"$DoctusTemplate(canvas)
-  DoctusTemplateControllerImpl(templ, sched, canvas)
+  DoctusTemplateController(templ, sched, canvas)
 
 }
 

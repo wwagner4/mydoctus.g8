@@ -19,7 +19,7 @@ object $name;format="Camel"$ScalaJs {
 
     // Common to all platforms
     val templ = $organization$.$name;format="Camel"$DoctusTemplate(canvas)
-    DoctusTemplateControllerImpl(templ, sched, canvas)
+    DoctusTemplateController(templ, sched, canvas)
 
     
   }
