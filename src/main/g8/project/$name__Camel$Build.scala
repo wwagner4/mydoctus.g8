@@ -13,8 +13,10 @@ object $name;format="Camel"$Build extends Build {
 
     val version = "$version$"
 
-    val scalaVersion = "$scala_version_major$.$scala_version_minor$"
+    val scalaVersion = "2.11.8"
     val doctusVersion = "1.0.5-SNAPSHOT"
+    val utestVersion = "0.4.1"
+    val scalaJsDomJqueryVersion = "0.9.0"
 
   }
 
@@ -33,7 +35,7 @@ object $name;format="Camel"$Build extends Build {
       commonSettings ++
         Seq(
           libraryDependencies += "net.entelijan" %%% "doctus-core" % D.doctusVersion,
-          libraryDependencies += "com.lihaoyi" %%% "utest" % "0.3.0" % "test"
+          libraryDependencies += "com.lihaoyi" %%% "utest" % D.utestVersion % "test"
 //          testFrameworks += new TestFramework("utest.runner.Framework")
           )
 
@@ -42,17 +44,17 @@ object $name;format="Camel"$Build extends Build {
         Seq(
           fork := true,
           libraryDependencies += "net.entelijan" %% "doctus-swing" % D.doctusVersion,
-          libraryDependencies += "com.lihaoyi" %%% "utest" % "0.3.0" % "test",
+          libraryDependencies += "com.lihaoyi" %%% "utest" % D.utestVersion % "test",
           testFrameworks += new TestFramework("utest.runner.Framework"))
 
     lazy val scalajsSettings =
       commonSettings ++
         Seq(
           jsDependencies += RuntimeDOM,
-          libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "0.8.0",
-          libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % "0.8.0",
-          libraryDependencies += "org.scala-js" %% "scalajs-library" % "0.6.0", 
-          libraryDependencies += "com.lihaoyi" %%% "utest" % "0.3.0" % "test",
+          libraryDependencies += "org.scala-js" %%% "scalajs-dom" % D.scalaJsDomJqueryVersion,
+          libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % D.scalaJsDomJqueryVersion,
+//          libraryDependencies += "org.scala-js" %% "scalajs-library" % "0.6.6", 
+          libraryDependencies += "com.lihaoyi" %%% "utest" % D.utestVersion % "test",
           libraryDependencies += "net.entelijan" %%% "doctus-scalajs" % D.doctusVersion
 //          testFrameworks += new TestFramework("utest.runner.Framework")
           )
