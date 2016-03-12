@@ -53,7 +53,6 @@ object $name;format="Camel"$Build extends Build {
           jsDependencies += RuntimeDOM,
           libraryDependencies += "org.scala-js" %%% "scalajs-dom" % D.scalaJsDomJqueryVersion,
           libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % D.scalaJsDomJqueryVersion,
-//          libraryDependencies += "org.scala-js" %% "scalajs-library" % "0.6.6", 
           libraryDependencies += "com.lihaoyi" %%% "utest" % D.utestVersion % "test",
           libraryDependencies += "net.entelijan" %%% "doctus-scalajs" % D.doctusVersion
 //          testFrameworks += new TestFramework("utest.runner.Framework")
