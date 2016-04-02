@@ -35,9 +35,7 @@ object $name;format="Camel"$Build extends Build {
       commonSettings ++
         Seq(
           libraryDependencies += "net.entelijan" %%% "doctus-core" % D.doctusVersion,
-          libraryDependencies += "com.lihaoyi" %%% "utest" % D.utestVersion % "test"
-//          testFrameworks += new TestFramework("utest.runner.Framework")
-          )
+          libraryDependencies += "com.lihaoyi" %%% "utest" % D.utestVersion % "test")
 
     lazy val swingSettings =
       commonSettings ++
