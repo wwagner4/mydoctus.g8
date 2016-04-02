@@ -15,7 +15,6 @@ object $name;format="Camel"$Build extends Build {
 
     val scalaVersion = "2.11.8"
     val doctusVersion = "1.0.5"
-    val utestVersion = "0.4.1"
     val scalaJsDomJqueryVersion = "0.9.0"
 
   }
@@ -34,16 +33,14 @@ object $name;format="Camel"$Build extends Build {
     lazy val coreSettings =
       commonSettings ++
         Seq(
-          libraryDependencies += "net.entelijan" %%% "doctus-core" % D.doctusVersion,
-          libraryDependencies += "com.lihaoyi" %%% "utest" % D.utestVersion % "test")
+          libraryDependencies += "net.entelijan" %%% "doctus-core" % D.doctusVersion)
 
     lazy val swingSettings =
       commonSettings ++
         Seq(
           fork := true,
           libraryDependencies += "net.entelijan" %% "doctus-swing" % D.doctusVersion,
-          libraryDependencies += "com.lihaoyi" %%% "utest" % D.utestVersion % "test",
-          testFrameworks += new TestFramework("utest.runner.Framework"))
+          libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.6" % "test")
 
     lazy val scalajsSettings =
       commonSettings ++
@@ -51,11 +48,7 @@ object $name;format="Camel"$Build extends Build {
           jsDependencies += RuntimeDOM,
           libraryDependencies += "org.scala-js" %%% "scalajs-dom" % D.scalaJsDomJqueryVersion,
           libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % D.scalaJsDomJqueryVersion,
-          libraryDependencies += "com.lihaoyi" %%% "utest" % D.utestVersion % "test",
-          libraryDependencies += "net.entelijan" %%% "doctus-scalajs" % D.doctusVersion
-//          testFrameworks += new TestFramework("utest.runner.Framework")
-          )
-
+          libraryDependencies += "net.entelijan" %%% "doctus-scalajs" % D.doctusVersion)
   }
 
   // Project definitions
