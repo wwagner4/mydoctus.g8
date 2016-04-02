@@ -51,6 +51,8 @@ case class $name;format="Camel"$DoctusTemplate(canvas: DoctusCanvas) extends Doc
   def pointablePressed(pos: DoctusPoint): Unit = () // Nothing to do here
 
   def pointableReleased(pos: DoctusPoint): Unit = () // Nothing to do here
+  
+  def keyPressed(code: DoctusKeyCode): Unit = () // Nothing to do here
 
 }
 
