@@ -28,7 +28,7 @@ object $name;format="Camel"$Build extends Build {
           version := D.version,
           scalaVersion := D.scalaVersion,
           organization := "$organization$",
-          resolvers += Resolvers.bintrayRepo("wwagner4", "maven"),
+          resolvers += Resolver.bintrayRepo("wwagner4", "maven"),
           EclipseKeys.withSource := true)
 
     lazy val coreSettings =
