@@ -1,0 +1,12 @@
+- make a build of doctus. see doctus howto-make-build.txt
+- checkout the development branche
+- deal with all the todos mentioned in todo.txt
+- make a testproject from the development branche
+- merge development branche to master
+- change the occurences of doctus x.x.x-SNAPSHOT to x.x.x
+- check in and push it to upstream.
+- make a testproject
+- switch to the development branche
+- change all the occurences of doctus x.x.x-SNAPSHOT to the next snapshot version
+- check in and push it to upstream.
+- make a testproject from the development branche
