@@ -1,0 +1,7 @@
+1.0.5
+open
+- replace utest by scalatest
+- Rename controller to framework. At least in core
+
+1.0.6
+- switch to build.sbt
