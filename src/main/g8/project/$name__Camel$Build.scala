@@ -14,7 +14,7 @@ object $name;format="Camel"$Build extends Build {
     val version = "$version$"
 
     val scalaVersion = "2.11.8"
-    val doctusVersion = "1.0.5-SNAPSHOT"
+    val doctusVersion = "1.0.5"
     val utestVersion = "0.4.1"
     val scalaJsDomJqueryVersion = "0.9.0"
 
