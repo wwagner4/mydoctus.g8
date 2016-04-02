@@ -28,7 +28,7 @@ object $name;format="Camel"$Build extends Build {
           version := D.version,
           scalaVersion := D.scalaVersion,
           organization := "$organization$",
-          // TODO replace with github resolvers += "entelijan" at "http://entelijan.net/artifactory/repo",
+          resolvers += bintrayRepo("wwagner4", "maven"),
           EclipseKeys.withSource := true)
 
     lazy val coreSettings =
