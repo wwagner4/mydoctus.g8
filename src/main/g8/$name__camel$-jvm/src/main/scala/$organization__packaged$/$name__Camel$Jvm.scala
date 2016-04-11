@@ -35,7 +35,7 @@ object $name;format="Camel"$SJvm extends App {
       val canvasFx = new Canvas(width, height);
 
       val sched = DoctusSchedulerJvm
-      val canvas = DoctusCanvasFx(canvasFx)
+      val canvas = DoctusTemplateCanvasFx(canvasFx)
       val img = DoctusImageFx("logo.png")
 
 
