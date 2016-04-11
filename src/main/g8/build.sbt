@@ -26,7 +26,7 @@ lazy val showcaseSettings =
 lazy val jvmSettings =
   coreSettings ++
     Seq(
-      libraryDependencies += "net.entelijan" %% "doctus-jvm" % doctusVersion,
+      libraryDependencies += "net.entelijan" %%% "doctus-jvm" % doctusVersion,
       fork := true,
       testFrameworks += new TestFramework("utest.runner.Framework"))
 
