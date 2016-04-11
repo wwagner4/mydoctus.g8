@@ -39,7 +39,7 @@ lazy val scalajsSettings =
 lazy val root = (project in file("."))
   .settings(commonSettings: _*)
   .settings(
-    name := "doctus-root")
+    name := "$name;format="camel"$-root")
   .aggregate(
     core,
     jvm,
