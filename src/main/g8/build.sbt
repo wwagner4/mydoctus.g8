@@ -16,7 +16,7 @@ lazy val commonSettings =
 lazy val coreSettings =
   commonSettings ++
     Seq(
-      libraryDependencies += "net.entelijan" %%% "doctus-core" % doctusVersion)
+      libraryDependencies += "net.entelijan" %%% "doctus-core" % doctusVersion,
       libraryDependencies += "com.lihaoyi" %%% "utest" % utestVersion % "test",
       testFrameworks += new TestFramework("utest.runner.Framework"))
 
