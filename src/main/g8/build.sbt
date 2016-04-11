@@ -16,8 +16,8 @@ lazy val commonSettings =
 lazy val coreSettings =
   commonSettings ++
     Seq(
+      libraryDependencies += "net.entelijan" %%% "doctus-core" % doctusVersion)
       libraryDependencies += "com.lihaoyi" %%% "utest" % utestVersion % "test",
-      libraryDependencies += "org.scala-lang" % "scala-reflect" % _scalaVersion,
       testFrameworks += new TestFramework("utest.runner.Framework"))
 
 lazy val showcaseSettings =
@@ -26,7 +26,7 @@ lazy val showcaseSettings =
 lazy val jvmSettings =
   coreSettings ++
     Seq(
-      libraryDependencies += "commons-lang" % "commons-lang" % "2.6" % "test",
+      libraryDependencies += "net.entelijan" %% "doctus-jvm" % doctusVersion,
       fork := true,
       testFrameworks += new TestFramework("utest.runner.Framework"))
 
@@ -36,6 +36,7 @@ lazy val scalajsSettings =
       jsDependencies += RuntimeDOM,
       libraryDependencies += "org.scala-js" %%% "scalajs-dom" % scalaJsDomJqueryVersion,
       libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % scalaJsDomJqueryVersion,
+      libraryDependencies += "net.entelijan" %%% "doctus-scalajs" % doctusVersion,
       testFrameworks += new TestFramework("utest.runner.Framework"))
 
 lazy val root = (project in file("."))
