@@ -47,19 +47,19 @@ lazy val root = (project in file("."))
     jvm,
     scalajs)
 
-lazy val core = (project in file("core"))
+lazy val core = (project in file("$name;format="camel"$-core"))
   .settings(coreSettings: _*)
   .settings(
     name := "$name;format="camel"$-core")
   .enablePlugins(ScalaJSPlugin)
 
-lazy val jvm = (project in file("jvm"))
+lazy val jvm = (project in file("$name;format="camel"$-jvm"))
   .settings(jvmSettings: _*)
   .settings(
     name := "$name;format="camel"$-jvm")
   .dependsOn(core)
 
-lazy val scalajs = (project in file("scalajs"))
+lazy val scalajs = (project in file("$name;format="camel"$-scalajs"))
   .settings(scalajsSettings: _*)
   .settings(
     name := "$name;format="camel"$-scalajs")
