@@ -56,13 +56,13 @@ lazy val core = (project in file("core"))
 lazy val jvm = (project in file("jvm"))
   .settings(jvmSettings: _*)
   .settings(
-    name := ""$name;format="camel"$-jvm")
+    name := "$name;format="camel"$-jvm")
   .dependsOn(core)
 
 lazy val scalajs = (project in file("scalajs"))
   .settings(scalajsSettings: _*)
   .settings(
-    name := ""$name;format="camel"$-scalajs")
+    name := "$name;format="camel"$-scalajs")
   .dependsOn(core)
   .enablePlugins(ScalaJSPlugin)
 
