@@ -6,7 +6,7 @@ lazy val scalaJsDomJqueryVersion = "0.9.0"
 
 lazy val commonSettings = 
   Seq(
-    version := doctusVersion,
+    version := "$version$",
     scalaVersion := _scalaVersion,
     organization := "net.entelijan",
     organizationHomepage := Some(url("http://entelijan.net/")),
