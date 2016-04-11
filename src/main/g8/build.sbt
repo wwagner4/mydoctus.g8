@@ -21,14 +21,14 @@ lazy val coreSettings =
       testFrameworks += new TestFramework("utest.runner.Framework"))
 
 lazy val jvmSettings =
-  coreSettings ++
+  commonSettings ++
     Seq(
-      libraryDependencies += "net.entelijan" %%% "doctus-jvm" % doctusVersion,
+      libraryDependencies += "net.entelijan" %% "doctus-jvm" % doctusVersion,
       fork := true,
       testFrameworks += new TestFramework("utest.runner.Framework"))
 
 lazy val scalajsSettings =
-  coreSettings ++
+  commonSettings ++
     Seq(
       jsDependencies += RuntimeDOM,
       libraryDependencies += "org.scala-js" %%% "scalajs-dom" % scalaJsDomJqueryVersion,
