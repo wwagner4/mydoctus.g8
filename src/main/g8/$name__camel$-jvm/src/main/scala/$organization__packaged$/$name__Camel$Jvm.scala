@@ -21,7 +21,7 @@ import javafx.event.ActionEvent
 import javafx.event.Event
 
 
-object $name;format="Camel"$SJvm extends App {
+object $name;format="Camel"$Jvm extends App {
 
   Application.launch(classOf[MyApp], args: _*);
 
